@@ -1,0 +1,46 @@
+tests:
+  site_visits:
+    - name: not_null_id
+      model: site_visits
+      column: id
+      tests:
+        - not_null
+
+    - name: unique_id
+      model: site_visits
+      column: id
+      tests:
+        - unique
+
+    - name: not_null_ip
+      model: site_visits
+      column: ip
+      tests:
+        - not_null
+
+    - name: accepted_values_ip
+      model: site_visits
+      column: ip
+      tests:
+        - accepted_values:
+            values:
+              - "127.0.0.1"
+              - "ЗАМАЗАЛ СВОЙ IP"
+
+    - name: not_null_user_agent
+      model: site_visits
+      column: user_agent
+      tests:
+        - not_null
+
+    - name: positive_values_timestamp
+      model: site_visits
+      column: timestamp
+      tests:
+        - positive_values:
+
+    - name: not_null_page_url
+      model: site_visits
+      column: page_url
+      tests:
+        - not_null
